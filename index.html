@@ -7,22 +7,22 @@
 </head>
 <body>
     
-<input type="text" name="text"  id="inp" onkeypress="add()">
+<input type="text" name="text"  id="inp" onkeydown="add(event)">
 <div id="out"></div>
 
 
 
     <script>
 
-function add(){
+function add(e){
 var recive = document.querySelector("#inp")
+if(e.key==="Enter")
 switch(recive.value){
 
 case "monday":
 case "tuesday":
 case "wednesday":
 document.querySelector("#out").innerHTML="<p>work from office</p>"
-console.log(recive.value)
 break
 
 case "thursday":
@@ -33,12 +33,13 @@ break
 case "saturday":
 case "sunday":
 document.querySelector("#out").innerHTML="<p>enjoy its your weekend</p>"
+
 break
 default:
     document.querySelector("#out").innerHTML="<p>invalid days</p>"
-}
-}
 
+}
+}
 
 
 
